@@ -11,17 +11,31 @@ body {
 }
 
 header {
-  background: #191919;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #000000;
+    border-bottom: 1px solid #ddd;
 }
 
-header .logo {
-  font-weight: bold;
-  font-size: 1.5em;
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.logo span {
+    font-family: 'Doodle', cursive;
+    color: white;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 
 header nav ul {
