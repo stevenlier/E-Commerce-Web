@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Commerce Store</title>
+    <title>Cart - E-Commerce Store</title>
     <link rel="stylesheet" href="main.css"> <!-- Link to CSS -->
+    <link rel="stylesheet" href="cart.css"> <!-- Cart-specific CSS -->
 </head>
 <body>
     <header>
@@ -14,7 +15,7 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="main.html">Home</a></li>
                 <li><a href="#">Products</a></li>
                 <li><a href="cart.html" id="cart-link">Cart (<span id="cart-count">0</span>)</a></li>
             </ul>
@@ -23,10 +24,14 @@
     </header>
 
     <main>
-        <section class="products">
-            <h2>Featured Products</h2>
-            <div class="product-grid" id="product-list">
-                <!-- Produknya bakal di sini -->
+        <section class="cart">
+            <h2>Your Cart</h2>
+            <div id="cart-items">
+                <!-- Cart items will be displayed here -->
+            </div>
+            <div class="cart-total">
+                <p>Total: Rp<span id="cart-total">0.00</span></p>
+                <button id="checkout-btn">Checkout</button>
             </div>
         </section>
     </main>
@@ -35,6 +40,6 @@
         <p>&copy; 2023 MyStore. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script> <!-- Link ke javascript -->
+    <script src="script.js"></script> <!-- Link to JavaScript -->
 </body>
 </html>
