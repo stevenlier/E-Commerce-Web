@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WATCHER</title>
+    <link rel="stylesheet" href="products.css">
+</head>
+<body>
+    <header>
+        <div class="logo">WATCHER</div>
+        <nav>
+            <ul>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#" id="cart-link">Cart (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+        <input type="text" placeholder="Search products..." id="search">
+    </header>
+    <main>
+        <aside>
+            <h2>Filter Products</h2>
+                <label><input type="radio" name="brand" id="all">All</label>
+                <h3>Top brands:</h3>
+                <label><input type="radio" name="brand" id="brand-rolex">Rolex</label>
+                <label><input type="radio" name="brand" id="brand-seiko">Seiko</label>
+                <label><input type="radio" name="brand" id="brand-casio">Casio</label>
+                <label><input type="radio" name="brand" id="brand-omega">Omega</label>
+                <label><input type="radio" name="brand" id="brand-citizen">Citizen</label>
+                <label><input type="radio" name="brand" id="brand-fossil">Fossil</label>
+        </aside>
+        <section class="products">
+      <!-- Rolex -->
+      <div class="product-card rolex">
+        <img src="imgs/rolex submariner.jpg" alt="Rolex">
+        <div class="product-info">
+          <h3>Rolex Submariner</h3>
+          <p class="price">$12,000</p>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card rolex">
+        <img src="imgs/rolex daytona.jpg" alt="Rolex">
+        <div class="product-info">
+          <h3>Rolex Daytona</h3>
+          <p class="price">$14,500</p>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Casio -->
+      <div class="product-card casio">
+        <img src="imgs/casio g-shock.webp" alt="Casio">
+        <div class="product-info">
+          <h3>Casio G-Shock</h3>
+          <p class="price">$150</p>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card casio">
+        <img src="imgs/casio edifice.jpg" alt="Casio">
+        <div class="product-info">
+          <h3>Casio Edifice</h3>
+          <p class="price">$180</p>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card casio">
+        <img src="imgs/casio vintage.jpg" alt="Casio">
+        <div class="product-info">
+          <h3>Casio Vintage</h3>
+          <p class="price">$80</p>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Omega -->
+      <div class="product-card omega">
+        <img src="imgs/omega seamaster.jpeg" alt="Omega">
+        <div class="product-info">
+          <h3>Omega Seamaster</h3>
+          <p class="price">$8,500</p>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card omega">
+        <img src="imgs/omega speedmaster.jpg" alt="Omega">
+        <div class="product-info">
+          <h3>Omega Speedmaster</h3>
+          <p class="price">$9,000</p>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Seiko -->
+      <div class="product-card seiko">
+        <img src="imgs/seiko presage.jpeg" alt="Seiko">
+        <div class="product-info">
+          <h3>Seiko Presage</h3>
+          <p class="price">$500</p>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card seiko">
+        <img src="imgs/seiko 5 sports.jpg" alt="Seiko">
+        <div class="product-info">
+          <h3>Seiko 5 Sports</h3>
+          <p class="price">$250</p>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Citizen -->
+      <div class="product-card citizen">
+        <img src="imgs/citizen eco drive.jpg" alt="Citizen">
+        <div class="product-info">
+          <h3>Citizen Eco-Drive</h3>
+          <p class="price">$400</p>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card citizen">
+        <img src="imgs/citizen chronograph.jpg" alt="Citizen">
+        <div class="product-info">
+          <h3>Citizen Chronograph</h3>
+          <p class="price">$350</p>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Fossil -->
+      <div class="product-card fossil">
+        <img src="imgs/fossil grant.jpg" alt="Fossil">
+        <div class="product-info">
+          <h3>Fossil Grant</h3>
+          <p class="price">$180</p>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card fossil">
+        <img src="imgs/fossil hybrid smartwatch.jpg" alt="Fossil">
+        <div class="product-info">
+          <h3>Fossil Hybrid Smartwatch</h3>
+          <p class="price">$220</p>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    </section>
+    </main>
+</body>
+
+</html>
+<script>
+  const filters = document.querySelectorAll('input[name="brand"]');
+  const products = document.querySelectorAll('.product-card');
+
+  filters.forEach(filter => {
+    filter.addEventListener('change', () => {
+      const selectedBrand = filter.id.replace('brand-', '');
+
+      products.forEach(product => {
+        if (selectedBrand === 'all' || product.classList.contains(selectedBrand)) {
+          product.style.display = 'flex';
+        } else {
+          product.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  document.getElementById('all').checked = true;
+</script>
